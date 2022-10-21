@@ -1,7 +1,11 @@
 from django.shortcuts import render,redirect
 
+from .models import post
+
+
 
 def index(request):
-    return render(request,'index.html')
+    p1 = post.objects.all()
+    return render(request,'index.html',{"posts":p1})
 
 # Create your views here.
